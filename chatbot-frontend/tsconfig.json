@@ -1,0 +1,20 @@
+{
+  "compilerOptions": {
+    "target": "es5", // Target ECMAScript version
+    "lib": ["dom", "dom.iterable", "esnext"], // Libraries to include
+    "allowJs": true, // Allow JavaScript files to be compiled
+    "skipLibCheck": true, // Skip type checking of declaration files
+    "esModuleInterop": true, // Enable compatibility with ES modules
+    "allowSyntheticDefaultImports": true, // Allow default imports from modules with no default export
+    "strict": true, // Enable all strict type-checking options
+    "forceConsistentCasingInFileNames": true, // Ensure consistent casing in file names
+    "module": "esnext", // Use ES modules
+    "moduleResolution": "node", // Resolve modules in a Node.js-like fashion
+    "resolveJsonModule": true, // Allow importing JSON files
+    "isolatedModules": true, // Ensure each file can be transpiled independently
+    "noEmit": true, // Do not emit JavaScript files (handled by Vite)
+    "jsx": "react-jsx" // Use the new JSX transform (React 17+)
+  },
+  "include": ["src"], // Include files in the src directory
+  "exclude": ["node_modules"] // Exclude node_modules from type checking
+}
