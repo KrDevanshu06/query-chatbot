@@ -3,10 +3,10 @@ from dotenv import load_dotenv
 import os
 
 load_dotenv()
-openai.api_key = os.getenv("OPENAI_API_KEY")
+client = openai.OpenAI(api_key=os.getenv("OPENAI_API_KEY"))  # New client initialization
 
 def summarize_supplier(supplier_data: str) -> str:
-    response = openai.ChatCompletion.create(  # Change to openai.ChatCompletion.create()
+    response = client.chat.completions.create(  # Updated method chain
         model="gpt-3.5-turbo",
         messages=[
             {"role": "system", "content": "Summarize this supplier's details in 1-2 sentences."},
@@ -14,4 +14,4 @@ def summarize_supplier(supplier_data: str) -> str:
         ],
         max_tokens=100,
     )
-    return response["choices"][0]["message"]["content"]  # Fix accessing response
+    return response.choices[0].message.content
