@@ -127,13 +127,12 @@ Interactive documentation available at `http://localhost:8000/docs`:
 
 ## License
 
-MIT License - see [LICENSE](LICENSE)
+MIT License - see [LICENSE](https://github.com/KrDevanshu06/query-chatbot?tab=MIT-1-ov-file#)
 
 ---
 
 **Need Help?**  
-Open an issue or contact [your.email@example.com](mailto:your.email@example.com)
-```
+Open an issue or contact [krdevanshu06@rediffmail.com](mailto:krdevanshu06@rediffmail.com)
 
 ---
 
@@ -144,5 +143,3 @@ Open an issue or contact [your.email@example.com](mailto:your.email@example.com)
 - One-click deployment buttons
 - Mobile-responsive formatting
 - License and contribution guidelines
-
-Add a `LICENSE` file and replace placeholder values (GitHub URL, email, demo GIF) with your actual project details. Let me know if you need adjustments! 😊
