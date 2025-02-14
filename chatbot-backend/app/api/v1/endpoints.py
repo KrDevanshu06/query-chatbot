@@ -2,6 +2,7 @@ from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from app import crud, schemas
 from app.database import get_db
+from app.services.openai_service import summarize_supplier
 
 router = APIRouter()
 
@@ -25,3 +26,11 @@ def get_product(product_id: int, db: Session = Depends(get_db)):
     if not product:
         raise HTTPException(status_code=404, detail="Product not found")
     return product
+
+@router.get("/suppliers/{supplier_id}/summary")
+def get_supplier_summary(supplier_id: int, db: Session = Depends(get_db)):
+    supplier = crud.get_supplier_by_id(db, supplier_id)
+    if not supplier:
+        raise HTTPException(status_code=404, detail="Supplier not found")
+    summary = summarize_supplier(f"Name: {supplier.name}, Categories: {supplier.product_categories}")
+    return {"summary": summary}

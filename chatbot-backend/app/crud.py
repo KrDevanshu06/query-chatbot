@@ -9,3 +9,6 @@ def get_suppliers_by_category(db: Session, category: str):
 
 def get_product_details(db: Session, product_id: int):
     return db.query(models.Product).filter(models.Product.id == product_id).first()
+
+def get_supplier_by_id(db: Session, supplier_id: int):
+    return db.query(models.Supplier).filter(models.Supplier.id == supplier_id).first()

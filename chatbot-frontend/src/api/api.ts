@@ -18,3 +18,8 @@ export const sendQuery = async (query: string): Promise<ApiResponse> => {
     }, 1000); // Simulate a 1-second delay
   });
 };
+
+export const getSupplierSummary = async (supplierId: number) => {
+  const response = await api.get(`/suppliers/${supplierId}/summary`);
+  return response.data.summary;
+};
