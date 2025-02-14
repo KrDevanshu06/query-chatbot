@@ -1,4 +1,5 @@
 from fastapi import FastAPI, Depends
+from app.api.v1.endpoints import router as api_router
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session
 from . import models, crud
@@ -17,6 +18,9 @@ app.add_middleware(
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+# Include API Router
+app.include_router(api_router, prefix="/api/v1")
 
 # Dependency to get the database session
 def get_db():
